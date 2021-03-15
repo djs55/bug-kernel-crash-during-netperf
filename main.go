@@ -11,7 +11,7 @@ func main() {
 	for {
 		log.Printf("iteration %d", i)
 		i++
-		cmd := exec.Command("docker", "run", "djs55/netperf:latest", "-F", "deadbeef", "-H", "host.docker.internal", "-D", "60", "-l", "600")
+		cmd := exec.Command("docker", "run", "djs55/netperf:latest", "-H", "host.docker.internal", "-l", "600")
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
 		if err := cmd.Run(); err != nil {
